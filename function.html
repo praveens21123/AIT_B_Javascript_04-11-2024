@@ -1,0 +1,158 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+ </head>
+ <body>
+  <button class="btn" id="btn-1">Click</button>
+  
+  <script>
+    /* 
+    Function - 
+    1.) It's a subroutine contains a set of statement/ Block of code, Which can perform some specific task.
+
+    2.) Function can be defined using function keyword followed by function Name and params.
+
+    Rules Creating a Function
+    1.) Function name shouldn't start with numbers.
+    2.) Function name shouldn't be a reserved keyword (i,e: new, var/let/const, function etc...)
+    3.) shouldn't contains special character other then underscore(_).
+
+    Note: Until unless if we call the function, Function does nothing.
+
+    1.) Function Declaration:
+    Syntax:
+    -> without params
+
+    function <function_name>(){
+      code to Execute  
+    }
+    
+    <function_name>()
+
+    */
+       function greet(){
+         alert("Welcome to JS")
+       }
+       greet()
+       greet()
+       greet()
+
+       let x = 10
+       let y = 20
+
+       function add(){
+         let res = x + y
+         console.log(res);
+       }
+       add()
+      /* 
+      Function with Params
+      syntax
+      function <function_name>(params1, params2........){ -> Parameter
+      
+      }
+      <function_name>(arguement1, arguement2.......) -> Arguement
+      */
+
+      return 
+       function addition(num1, num2){
+         let res = num1 + num2        
+         return res;        
+       }
+       const m = 2 + addition(5, 8)
+       console.log(m);
+      
+
+       const n = addition(2, 2)
+       console.log(n);
+
+      //  Utility function/ Helper function
+
+       function cutPieces(fruits){
+        return fruits * 4
+       }
+      
+       function juiceHandler(apple, orange){
+       const pieceOfApple = cutPieces(apple)
+       const pieceOfOrange = cutPieces(orange)
+
+       console.log(`Juice: ${pieceOfApple} pieces of Apple and ${pieceOfOrange} pieces of Orange`);
+       }
+       juiceHandler(2, 3)
+
+      //  Function with Default params
+
+       function printNum(num1, num2, num3=4){
+        console.log(num1, num2, num3);
+       }
+
+       printNum(2, 3)
+
+       function addition2(num1, num2){
+         let res = num1 + num2        
+         return;        
+       }
+       const z = addition2(5, 8)
+       console.log(z);
+     /*  
+     Nested Function - 
+     1.) A function have one or more inner function, These nested functions are scope of outer function.
+     2.) Inner function can have access the variables and params of Outer Function 
+     3.) But Outer function can't access the variables and params of inner function.
+     
+     */
+     function multiply(num1, num2){
+
+      const x = 10
+
+        function innerHandler(){
+          console.log(x);
+          
+          console.log(num1 * num2);
+        }
+        innerHandler()
+      
+     }
+     multiply(2, 3)
+
+   /* 
+   2.) Function Expression / Anonymous Function.
+   -> JS Allows as to store a function in a variable, Later we can use the variable as function name.
+   -> Anonymous Function is used to passing a call-back function, creating a closure and IIFE.
+
+   syntax:
+   const <variable_Name> = function(){
+    Code to Execute
+    }
+    <Variable_Name>()
+   */
+
+   let substruction = function(num1, num2){
+    return num1 - num2
+   }
+
+   let a = substruction(10, 5)
+   console.log(a);
+   
+  // 3. Arrow Function - Introduced in ES6(2015) It help as to write a function in cleaner way.
+   /* 
+   Syntax : 
+   const <variable_name> = () => { }
+   */
+   const addition = (num1, num2) => {
+      return num1 + num2
+   }
+   console.log(addition(5, 3));
+
+   const btn = document.querySelector("button")
+
+   btn.addEventListener("click", function(){
+    console.log(this);
+   })
+
+  </script>
+ </body>
+ </html>

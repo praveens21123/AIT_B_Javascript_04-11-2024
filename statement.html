@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statement</title>
+</head>
+<body>
+  <script>
+
+  const name = "Peter"
+  const personAge = 25
+
+  const res = name + '\'s age is ' + personAge
+  const res1 = `${name}'s age is ${personAge}`
+ 
+  document.write(res)
+  document.write(res1)
+ /* 
+ If statement - based certain conditions, Executing some code.
+ syntax:
+ if(condition){
+   code to Execute
+ }
+ */
+  const stu_age = 20
+
+  if(stu_age >= 14){
+   alert(`Student allowed to high school, since his/her age is ${stu_age}`)
+  }
+
+const num = 3
+
+if(num % 2 == 0){
+  console.log("Even");
+} else{
+  console.log("odd");
+}
+
+/* 
+if-else statement - if condition's false, else block will execute.
+syntax:
+if(condition){
+}else{
+}
+*/
+  if(stu_age >= 14){
+   alert(`Student allowed to admit high school, since his/her age is ${stu_age}`)
+  }else{
+   alert(`Student is not allowed to admit high school, since his/her age is ${stu_age}`);
+  }
+
+ /* 
+ else-if -
+
+ */
+ const age = 9
+  if(age >= 14){
+   alert(`Student allowed to admit high school, since his/her age is ${age}`)
+  }else if(age <=12 && age >= 10){
+   alert(`Student allowed to admit middle school, since his/her age is ${age}`)
+  } else{
+   alert(`Student is allowed to admit Elementary school, since his/her age is ${age}`);
+  }
+
+ /* 
+ Switch statement
+
+ syntax:
+
+ switch(expression){
+ case x : 
+    code to execute
+    break;
+
+  case y : 
+    code to execute
+    break;
+
+  case z : 
+    code to execute
+    break;
+  
+  default : 
+  code to execute
+  break
+ }
+ */
+
+ const x = "thusday"
+  const y = "thusday"
+
+ switch(day){
+  case "monday" :
+    console.log("Happy monday");
+    break;
+  case "tuesday" :
+    console.log("Happy tuesday");
+    break;
+  case "wednesday" :
+    console.log("Happy wednesday");
+    break;
+  case "thusday" :
+    console.log("one more day to weekend");
+  
+  case "friday" :
+    console.log("Good friday");
+    break;
+  case "saturday" :
+    console.log("Enjoy Party on saturday night");
+    break;
+  case "sunday" :
+    console.log("Happy fun day");
+    break;
+  default : console.log("Something went wrong!");
+ }
+
+ const mark = 85
+
+ switch(true){
+  case mark >=80 : 
+    console.log("A");
+    break;
+  case mark >=90 : 
+    console.log("B");
+    break;
+  case mark >=70 : 
+    console.log("C");
+    break;
+  case mark >=60 : 
+    console.log("D");
+    break;
+  default: console.log("F");  
+ }
+
+ /* 
+ 1. DRY - Don't Repeat youself!
+ 2. SOC - Seprate of concern!
+ 3. KISS - Keep it simple stupid!
+ */
+    
+  </script>
+</body>
+</html>

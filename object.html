@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object</title>
+</head>
+<body>
+  
+  <script>
+    // An object is non-primitive datatype. Object holds multiple value s in terms of properties(Keys and Values) and Method.
+
+    //Object is collection of Properties
+
+    //Object keys always strings.
+
+
+    //Three ways to create a object.
+    /* 
+    1.) Object literal
+    2.) Object Constructor
+    3.) Function Constructor
+    */
+//  1.) Object literal
+    const apple = {  //[[brand, Apple], [model, "Iphone16"]]
+      brand : "Apple",
+      model: "Iphone 16",
+      price: 85000,
+      releasedate : "sep 2024",
+    }
+    // console.log(brand);
+    
+    const assignAp = Object.assign({},apple) 
+    console.log(assignAp);
+
+    const x = "date"
+    console.log(apple["release" + x]);// "date"
+    
+
+  // 2.) Object Constructor
+  const samsung = new Object()
+
+  samsung.brand = "Samsung"
+  samsung.model = "s24 Ultra"
+  samsung.price = 120000
+
+  samsung.model = "s24 Ultra max"
+
+  console.log(apple);
+  console.log(samsung);
+
+
+  //Object Methods(Static methods)
+
+  //1.) hasOwnproperty()
+  console.log(samsung.hasOwnProperty("releasedate"));
+
+  //2.) Object.keys()
+  const keys = Object.keys(apple)
+  console.log(keys);
+
+  //3.) Object.values()
+  const values = Object.values(apple)
+  console.log(values);
+
+  //4.) Object.entries()
+  const entries = Object.entries(apple)
+  console.log(entries);
+
+  //5.) Object.create()
+  const a = {
+    msg: "Hello World",
+    greet: "Welcome to JS"
+  }
+
+  const b = Object.create(a)
+  console.log(b.msg);
+
+  // 6.) Object.assign()
+  const c = Object.assign({},a)
+  console.log(c);
+
+  // 7.) Object.freeze()
+
+  const samsung = {
+  brand : "Samsung",
+  model : "s24 Ultra",
+  price : 120000
+  }
+  Object.freeze(samsung)
+
+  samsung.size = "6.7"
+  samsung.model = "s24 Ultra max"
+  console.log(samsung);
+
+  //8.) Object.seal()
+
+  const samsung = {
+  brand : "Samsung",
+  model : "s24 Ultra",
+  price : 120000
+  }
+  Object.seal(samsung)
+
+  samsung.size = "6.7"
+  samsung.model = "s24 Ultra max"
+  console.log(samsung);
+    
+  </script>
+</body>
+</html>

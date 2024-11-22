@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object-2</title>
+</head>
+<body>
+  <script>
+    // Array of Objects
+    const car = [
+      {brand:"BMW", model:"XYZ", price:"40L"},
+      {brand:"Honda", model:"XYZ", price:"20L"},
+      {brand:"Tata", model:"XYZ", price:"70L"},
+      {brand:"Audi", model:"XYZ", price:"90L"},
+    ]
+
+    for(let i = 0; i < car.length; i++){
+      console.log(car[i].brand);
+    }
+
+    // Math Object
+    console.log(Math.PI); // -->3.1415
+
+    const price = 204.01
+    // 1. Math.round() -It rounds the Integer Number if the Decimal Value lessthan .5, It returns the previous Integer Value, If Decimal Value Greaterthan .5, it returns next Integer value.
+    console.log(`Round value of ${price} is ${Math.round(price)}`);
+    
+    // 2. Math.ceil()- It rounds the Integer Number of next Integer number, Even decimal value .01  
+    console.log(`ceil value of ${price} is ${Math.ceil(price)}`);
+
+    // 3. Math.floor()- It always returns the previous Integer value, No matter decimal Number greaterthan .5
+    console.log(`Floor value of ${price} is ${Math.floor(price)}`);
+
+    // 4. Math.abs() - It converts nagative value to positive value. (abs-absolute)
+    const price2 = -204.56
+    console.log(`Absolute value of ${price} is ${Math.abs(price2)}`);
+
+    // 5. Math.pow() - It calculates the first arguement power of second arugement
+    console.log(`Power of 10,4 is ${Math.pow(10, 4)}`);
+
+    // 6. Math.sqrt() - It returns the Squareroot Value.
+    console.log(`SquareRoot of 16 is ${Math.sqrt(16)}`);
+
+    // 7. Math.max() - It returns the highest value
+    console.log(`Max of 9,22,13,21,8 is ${Math.max(9,22,13,21,8)}`);
+
+    // 8. Math.min() - It returns, Which is the least value.
+    console.log(`Min of 9,22,13,21,8 is ${Math.min(9,22,13,21,8)}`);
+    
+    // 9.Math.trunch() -It Ignore's the decimal numbers
+    console.log(`Trunc of ${price} is ${Math.trunc(price)}`);
+
+    // 10. Math.random() - It gives a random value between 0 to 1 
+    console.log(`Random number ${Math.trunc(Math.random()* 1000000)}`);
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //Date Object 
+
+    const date = new Date()
+    console.log(date);
+
+    const day = date.getDay()
+    console.log(day);
+
+    const month = date.getMonth()
+    console.log(month);
+
+    const year = date.getFullYear()
+    console.log(year);
+
+    const time = date.getTime()
+    console.log(time);
+
+    const minute = date.getMinutes()
+    console.log(minute);
+
+    const seconds = date.getSeconds()
+    console.log(seconds);
+
+    const hour = date.getHours()
+    console.log(hour);
+    
+    const setDate = date.setDate(15)
+    console.log(setDate);
+
+    ////////////////////////////////////////////////////////////////////////////////
+    const arr = [1, 2, 3, 4, 5] //Output ->  [4, 5, 1, 2, 3]
+    
+  </script>
+</body>
+</html>
