@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-2</title>
+</head>
+<body>
+
+  <figure id="figure">
+    <img src="https://www.achieversit.com/assets/images/logo-white.png" alt="AIT">
+    <figcaption>Achieversit</figcaption>
+  </figure>
+
+  <ul>
+    <li>React</li>
+    <li>Angular</li>
+    <li>NextJS</li>
+  </ul>
+  <ul>
+    <li>NodeJS</li>
+    <li>Express</li>
+    <li>MongoDB</li>
+  </ul>
+
+  <p class="para">Events - It helps as to interact with HTML Element</p>
+
+  <script>
+    //1.) getElementById()
+    document.getElementById("figure").style.border = "1px solid red"
+
+    //2.) getElementsByClassName()
+    document.getElementsByClassName("para")[0].style.border = "2px dashed green"
+
+    //3.) getElementsByTagName()
+    // document.getElementsByTagName("ul")[0].style.border = "5px dotted blue"
+
+    // const htmlEle = document.getElementsByTagName("ul")
+    // console.log(htmlEle);
+
+    // for(let i = 0; i<htmlEle.length; i++){
+    //   htmlEle[i].style.border = "5px dotted blue"
+    // }
+
+    // 4.) querySelector()
+    document.querySelector("[src]").style.padding = "20px"
+    document.querySelector("figcaption").style.backgroundColor = "yellow"
+    // const list1 = document.querySelector("ul li")
+    // list1.style.color = "red"
+    // list1.nextElementSibling.style.color = "red"
+
+    //5.) querySelectorAll()
+    const listItems = document.querySelectorAll("li")
+    console.log(listItems);
+    
+    for(let i = 0; i < listItems.length; i++){
+      listItems[i].style.color = "blue"
+    }
+
+
+    
+
+    
+
+  </script>
+</body>
+</html>

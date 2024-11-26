@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    .container{
+      display: flex;
+    }
+    .flexItems{
+      flex: 1
+    }
+    .box{
+      border: 2px solid black;
+      padding: 10px;
+    }
+  </style>
+<body>
+
+  <script>
+
+      const students = ["Peter", "elon", "David", "Jessica"]
+
+      let ele = ""
+      console.log(ele);
+      
+
+      for(let i = 0; i < students.length; i++){
+        ele += `<div class="flexItems box">${students[i]}</div>`
+      }
+      console.log(ele, "After Loop!");
+      
+
+      const parentEle = `<section class="container box">${ele}</section>`
+        console.log(parentEle);
+
+    document.getElementsByTagName("body")[0].innerHTML = parentEle
+
+    /* 
+    <div class="flexItems box">${students[0]}</div>
+    <div class="flexItems box">${students[1]}</div>
+    <div class="flexItems box">${students[2]}</div>
+    <div class="flexItems box">${students[3]}</div>
+    */
+
+    const details = [
+      {id:1, name:"Praveen"},
+      {id:1, name:"Praveen"},
+      {id:1, name:"Praveen"},
+      {id:1, name:"Praveen"},
+      {id:1, name:"Praveen"},
+    ]
+        
+  </script>
+</body>
+</html>
