@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>DOM_3</title>
 </head>
   <style>
     .container{
@@ -20,23 +20,23 @@
 <body>
 
   <script>
+    // 1.) Creating elements by using string Literal/Template Literal
 
-      const students = ["Peter", "elon", "David", "Jessica"]
+    //   const students = ["Peter", "elon", "David", "Jessica"]
 
-      let ele = ""
-      console.log(ele);
+    //   let ele = ""
+    //   console.log(ele);
+      
+    //   for(let i = 0; i < students.length; i++){
+    //     ele += `<div class="flexItems box">${students[i]}</div>`
+    //   }
+    //   console.log(ele, "After Loop!");
       
 
-      for(let i = 0; i < students.length; i++){
-        ele += `<div class="flexItems box">${students[i]}</div>`
-      }
-      console.log(ele, "After Loop!");
-      
+    //   const parentEle = `<section class="container box">${ele}</section>`
+    //     console.log(parentEle);
 
-      const parentEle = `<section class="container box">${ele}</section>`
-        console.log(parentEle);
-
-    document.getElementsByTagName("body")[0].innerHTML = parentEle
+    // document.getElementsByTagName("body")[0].innerHTML = parentEle
 
     /* 
     <div class="flexItems box">${students[0]}</div>
@@ -45,13 +45,58 @@
     <div class="flexItems box">${students[3]}</div>
     */
 
-    const details = [
-      {id:1, name:"Praveen"},
-      {id:1, name:"Praveen"},
-      {id:1, name:"Praveen"},
-      {id:1, name:"Praveen"},
-      {id:1, name:"Praveen"},
-    ]
+    // 2.)Creating elements by using dom Methods
+
+    /* 
+    <section class="container box">
+      <div class="flexItems box">Peter</div>
+      <div class="flexItems box">elon</div>
+      <div class="flexItems box">David</div>
+      <div class="flexItems box">Jessica</div>
+    </section>
+    */
+
+    const parentEle = document.createElement("section")
+
+    const div1 = document.createElement("div")
+    const div2 = div1.cloneNode()
+    const div3 = div1.cloneNode()
+    const div4 = div1.cloneNode()
+
+    parentEle.appendChild(div1)
+    parentEle.appendChild(div2)
+    parentEle.appendChild(div3)
+    parentEle.appendChild(div4)
+
+    // console.log(parentEle);
+    
+    const txt1 = document.createTextNode("Peter")
+    const txt2 = document.createTextNode("Elon")
+    const txt3 = document.createTextNode("David")
+    const txt4 = document.createTextNode("Jessica")
+
+    div1.appendChild(txt1)
+    div2.appendChild(txt2)
+    div3.appendChild(txt3)
+    div4.appendChild(txt4)
+
+    console.log(parentEle);
+
+    const body = document.querySelector("body")
+    body.appendChild(parentEle)
+
+    // Setting Attributes to the tag!
+
+    parentEle.setAttribute("class", "container box")
+
+    div1.setAttribute("class", "flexItems box")
+    div2.setAttribute("class", "flexItems box")
+    div3.setAttribute("class", "flexItems box")
+    div4.setAttribute("class", "flexItems box")
+
+    parentEle.setAttribute("style", "background-color:red")
+    parentEle.removeAttribute("style")
+
         
   </script>
 </body>
