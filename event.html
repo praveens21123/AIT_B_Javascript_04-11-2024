@@ -4,11 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .parent{
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+    /* body{
+      height: 100vh;
+    } */
+    .list-items{
+      border: 1px solid black;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    ul{
+      margin-bottom: 20px;
+    }
+    .highlight{
+      color: white;
+      background-color: brown;
+    }
+  </style>
 </head>
 <body>
-  <button>Click me</button>
-  
+  <div class="parent">
+    <h2>Event in JS</h2>
+    <button class="btn">Click me</button>
+  </div>
 
+  <ul type="none">
+    <li class="list-items">1</li>
+    <li class="list-items">2</li>
+    <li class="list-items">3</li>
+    <li class="list-items">4</li>
+  </ul>
+  
   <script src="./Events.js"></script>
 </body>
 </html>

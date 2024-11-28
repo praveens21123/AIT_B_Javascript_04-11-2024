@@ -56,13 +56,16 @@
     </section>
     */
 
+    // Creating parentElement using dom methods
     const parentEle = document.createElement("section")
 
+    // Creating childElement using dom methods
     const div1 = document.createElement("div")
     const div2 = div1.cloneNode()
     const div3 = div1.cloneNode()
     const div4 = div1.cloneNode()
 
+    //Inserting child elements inside the parent element.
     parentEle.appendChild(div1)
     parentEle.appendChild(div2)
     parentEle.appendChild(div3)
@@ -70,11 +73,13 @@
 
     // console.log(parentEle);
     
+    // Creating content using dom methods
     const txt1 = document.createTextNode("Peter")
     const txt2 = document.createTextNode("Elon")
     const txt3 = document.createTextNode("David")
     const txt4 = document.createTextNode("Jessica")
 
+    //Inserting content inside the child element.
     div1.appendChild(txt1)
     div2.appendChild(txt2)
     div3.appendChild(txt3)
@@ -86,7 +91,6 @@
     body.appendChild(parentEle)
 
     // Setting Attributes to the tag!
-
     parentEle.setAttribute("class", "container box")
 
     div1.setAttribute("class", "flexItems box")
@@ -95,9 +99,10 @@
     div4.setAttribute("class", "flexItems box")
 
     parentEle.setAttribute("style", "background-color:red")
+
+    // Removing Attributes!
     parentEle.removeAttribute("style")
 
-        
   </script>
 </body>
 </html>
