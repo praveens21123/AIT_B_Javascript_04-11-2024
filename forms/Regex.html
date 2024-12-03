@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+  //  const regexPattern = new RegExp(pattern, Attributes)
+
+  const pattern = /to/g
+
+  const str = "Welcome to JS"
+
+  const num = "9150321123"
+
+  // const res = pattern.test(str)
+
+  // const res = str.match(pattern)
+
+  const res = num.match(/^[8,9]\d{9}$/)
+
+  console.log(res);
+
+
+  /* 
+  Brackets - Defines range of the character
+  [abc] - ocuurs a, b or c
+  [^abc] - excepts a, b or c
+  [a-z] - occurs lowercase a to z
+  [A-Z] - Occurs Uppercase A to Z
+  [0-9] - Only numbers.
+  [a-zA-z0-9] - Alphabetics and Numbers
+  [^a-zA-z0-9] - Apart from Alphabetics and Numbers (i,e: Special characters)
+
+  Quantifiers - Repeatations
+  []? - 0time or 1time
+  []+ - 1time or more than 1 time
+  []* - 0time or morethan 1 time
+  []{n} - ntimes
+  []{n,} - min ntimes, max it could be anything
+  []{n,m} - min ntimes, max mtimes
+
+  Modifiers
+
+  g - Performs globally.
+  i - Performs case insensitive (Ignore)
+  m - Performs Multilines
+
+  Regex Meta Characters
+
+  \w - [a-zA-z0-9_]
+  \W - [^a-zA-z0-9_]
+  \d - [0-9]
+  \D - [^0-9]
+
+  \s - space
+  \@ - Special characters. 
+  */
+  
+
+
+
+  </script>
+</body>
+</html>
