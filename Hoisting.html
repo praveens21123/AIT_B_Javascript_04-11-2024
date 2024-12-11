@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting in JS</title>
+</head>
+<body>
+    <script>
+    /*  
+    Hoisting :
+      -> In JS hoisting is default behaviour of moving all the declaration at the top of scope before execution. 
+
+      -> Hoisting is phenomenon in which we can able to access certain varibles anfd functions before it's actual declaration.
+
+      -> before execution, code is scanned for variable declaration and for each variable , a new property is created in the variable environment object.
+    */
+        // print()
+        // console.log(x);
+
+        // var x = "Hello World"
+        
+        // function print(){
+        //   console.log("Welcome to JS");
+        // }
+
+    /* 
+    ------------------------------------------------------------------------------------
+                                        Hoisting    |  Intial Value   |  Scope
+    ------------------------------------------------------------------------------------
+    Function Declaration                  YES          Actual Fn        block Scope
+    var keyword                           YES           Undefined       Function Scope
+    let and const                         NO    <UnInitiallization>TDZ  Block Scope
+    Function Exp & Arr               Depends on var or let/const        block scope
+    */
+
+    // greet() //undefined()
+    // let greet = function(){
+    //     console.log("Welcome to JS");
+    // }
+    //mutual rescursive
+
+    // function a(){
+    //     b()
+    // }
+    // function b(){
+    //     a()
+    // }
+
+    //Recursive Function - A function calls itself
+
+    // let i = 0
+    // function count(){
+    //   i++
+    //   console.log(i);
+    //   if(i < 5){
+    //     count()
+    //   }
+    // }
+    // count()
+    ////////////////////////////////////////////////////////////////////
+      // Primitive Vs Referance Data types in JS
+
+    let x = 10
+
+    let y = x
+
+    x = 20
+
+    console.log(x, y);
+
+
+    const peter = {
+        name : "Peter",
+        age: 25,
+        friend : ["a", "b", "c"]
+    }
+
+    // const friend = peter
+
+    // friend.age = 30
+
+    // console.log(peter, friend);
+
+    const friends = Object.assign({}, peter)
+    // console.log(friend);
+
+    friends.age = 30
+    friends.friend[0] = "x"
+
+    console.log(peter, friends);
+
+
+    if(true){
+        console.log(age);
+        const name = "Peter"
+        let age = 25
+        var job = "Engineer"
+    }
+
+    </script>
+</body>
+</html>
