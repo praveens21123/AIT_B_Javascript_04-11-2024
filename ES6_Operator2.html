@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6_Operator2</title>
+</head>
+<body>
+  
+
+  <script>
+      //////////////////////////////////////////////////////
+ /* 
+  Optional chaining(?.) - The optional chaining (?.) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
+*/
+
+  // const resturant = {
+  //    name : "Starbucks",
+  //    openingHours : {
+  //         thu: {
+  //           open:"10",
+  //           close:22
+  //         },
+  //         fri:{
+  //           open:"11",
+  //           close:23
+  //         },
+  //         sat:{
+  //           open:"0",
+  //           close:24
+  //         }
+  //    }
+  // }
+  // // console.log(resturant.openingHours?.mon?.open);
+
+  // const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+
+  // for(let i = 0; i < days.length; i++){
+  //   const start = resturant.openingHours[days[i]]?.open ?? "closed"
+  //   // console.log(start);
+
+  //   // console.log(`on ${days[i]}, We are open at ${start}`);
+
+  //   if(resturant.openingHours[days[i]]?.open){
+  //     console.log(`on ${days[i]}, We are open at ${start}`);
+  //   } else {
+  //     console.log(`on ${days[i]}, We are Closed`);
+  //   }
+  // }
+
+  /////////////////////////////////////////////////////////////////////
+  /* 
+    Sets - Set is a collection of elements which are unique (i.e No element can be repeated), Set values can have any datatype. 
+  */
+  const country = ["India", "USA", "Italy", "UK", "Pakistan", "UK", "USA"]
+
+  const set1 = new Set(country)
+  console.log(set1);
+
+  console.log(set1.has("USA"));
+  set1.add("Nepal")
+  set1.delete("Pakistan")
+  console.log(set1.size);
+  console.log(typeof set1);
+  set1.clear()
+  console.log(set1);
+  const numbers = [1, 2, 3, 4, 5, 6, 2, 3, 4, 5]
+  const set2 = [...new Set(numbers)]
+  console.log(set2);
+  ////////////////////////////////////////////////////////
+  //Maps - map is a collection of properties which each properties has key and value.Map keys can have any datatype. 
+
+  const obj = {
+    name : 24
+  }
+  // console.log(Object.keys(obj));
+  
+  console.log(typeof Object.keys(obj)[0]);
+  
+
+  const map1 = new Map()
+
+  map1.set("name", "Peter")
+  map1.set(true, "hasLicense")
+  map1.set(23, "age")
+
+  map1.delete(true)
+  console.log(map1.has("age"));
+   console.log(map1.size);
+   
+  // map1.clear()
+  
+  console.log(map1);
+  
+  </script>
+</body>
+</html>
