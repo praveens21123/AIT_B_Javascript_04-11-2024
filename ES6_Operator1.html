@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Operators</title>
+</head>
+<body>
+  <script>
+
+    /* 
+    Array Destructuring : Destructuring in JS is a simplified method of extracting multiple elements from an array.Array destructring uses position. 
+    */
+    // const country = ["India", "USA", "Italy", "UK", "Pakistan"]
+
+    // //old way
+    // // const a = country[0]
+    // // const b = country[1]
+    // // const c = country[2]
+    // // console.log(a, b, c);
+    
+    // const [a, b, c] = ["India", "USA", "Italy", "UK", "Pakistan"]
+    // console.log(country);
+    // console.log(a, b, c);
+
+    // //Ignoring elements of an array
+    // // const [x, , , y] = country
+    // // console.log(x, y);
+
+    // // Nested Array destructuring
+    // const nations = ["India", ["USA", ["Italy", "UK"]], "Pakistan"]
+
+    // //old way
+    // // const i = nations[1][1][1]
+    // // console.log(i);
+
+    // //New Way
+    // const [i,[j,[k,l]],m] = ["India", ["USA", ["Italy", "UK"]], "Pakistan"]
+    // console.log(i, j, k, m, l);
+
+    // // Default values - 
+    // const [x, y, z=3]= [1, 2, 5]
+    // console.log(x, y, z);
+
+  //////////////////////////////////////////////////////////////////
+  //Object Destructing
+
+  const person = {
+    name: "Peter",
+    father: "Xavier",
+    hobbies: ["Swimming", "Singing", "Dancing"],
+    friends: ["Nick", "Kyle", "David"]
+  }
+
+  // const x = person.name
+  // console.log(x);
+
+  // const {name, father, friends} = {
+  //   name: "Peter",
+  //   father: "Xavier",
+  //   hobbies: ["Swimming", "Singing", "Dancing"],
+  //   friends: ["Nick", "Kyle", "David"]
+  // }
+  // console.log(name, father, friends);
+
+  //Renaming the variable
+  // const {name:fullName, father:parent, friends} = {
+  //   name: "Peter",
+  //   father: "Xavier",
+  //   hobbies: ["Swimming", "Singing", "Dancing"],
+  //   friends: ["Nick", "Kyle", "David"]
+  // }
+  // console.log(fullName, parent, friends);
+
+  //Nested Object Destructing
+  // const x = {
+  //   a:1,
+  //   b:{ c:2, d:{ e: 2}} 
+  // }
+
+  // const y = x.b.d.e
+  // console.log(y);
+
+  // const {a, b:{c, d:{e}}} = {
+  //   a:1,
+  //   b:{ c:2, 
+  //       d:{ e: 5}
+  //   } 
+  // }
+  // console.log(e);
+  //////////////////////////////////////////
+  //Default values in Object
+
+  // const {father, mother = "Jessica"} = {
+  //   name: "Peter",
+  //   father: "Xavier",
+  //   mother: "x",
+  //   hobbies: ["Swimming", "Singing", "Dancing"],
+  //   friends: ["Nick", "Kyle", "David"]
+  // }
+  // console.log(mother);
+  // ////////////////////////////////////////////////////////////////
+  /*    
+ Spread Operator - It takes all the elements in the array and it gonna spread each elements to an another array. 
+ */
+
+  // const fruits = ["Apple", "Orange", "Mango", "Kiwi"]
+  // const vegs = ["Onion", "Carrot", "Beans", ...fruits]
+
+  // // const z = fruits.concat(vegs)
+  // // console.log(z);
+  
+  // console.log(vegs);
+
+  // const newPerson = {...person}
+  // newPerson.name = "David"
+  // console.log(newPerson);
+  // console.log(person);
+  // ///////////////////////////////////////////////////
+  // // Rest pattern and parameters
+    /* 
+      A rest parameter is used to map all the remaining elements in the array that have not been mapped to the rest variable itself The rest variable must always be the last.
+    */
+
+  // const [a, b, ...others] = ["India", "USA", "Italy", "UK", "Pakistan"]
+  // console.log(a, b, others);
+
+  // const num = [2, 3, 4, 5]
+  // function printNum(...numbers){  //[2, 3, 4, 5]
+  //   for(let i = 0; i < numbers.length; i++){
+  //     console.log(numbers[i]);
+  //   }
+  // }
+  // printNum(...num) //2, 3, 4, 5
+
+  // Ternary Operator - A special operator, assign value to the variable based some condtion.
+  // Syntax : const x = (Condition) ? value1 : value2
+
+  // const age = 13
+  // const hasLicense = age >= 18 ? true : false
+  // console.log(hasLicense);
+
+  // const allowed = age >=15 ? "Student allowed to high school" : "Student not allowed to high school"
+  // console.log(allowed);
+  
+
+  ////////////////////////////////////////
+  // Short Circuting
+
+  // console.log(`=====OR=====`);
+  
+  // console.log( 3 || "Peter");
+
+  // console.log(undefined || null);
+
+  // console.log("" || 0 || undefined || "hello" || 23 || null);
+
+  // const car = {
+  //   make: "BWM",
+  //   kms: 0
+  // }
+  // // const distance = car.kms ? car.kms : 10
+  // const distance = car.kms || 10
+
+  // console.log(distance);
+
+  console.log(`=====AND=====`);
+
+  console.log( 23 && "hello");
+
+  console.log(undefined && 23 && "hello");
+
+  console.log("peter" && 23 && null && 10 && "hello");
+
+   const car = {
+
+    kms: 0
+  }
+  // console.log(`The car brand is ${car.make}`);
+  // if(car.make){
+  //   console.log(`The car brand is ${car.make}`);
+  // }
+
+  car.make && console.log(`The car brand is ${car.make}`);
+  
+  ////////////////////////////
+  //Nullish Coelescing (??) - Falsy values: null and undefined
+
+  // const car = {
+  //   make: "BWM",
+  //   kms: 0
+  // }
+
+  // const distance = car.kms ?? 10
+  // console.log(distance);
+  </script>
+</body>
+</html>
