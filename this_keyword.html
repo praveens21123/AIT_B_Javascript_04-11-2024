@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+</head>
+<body>
+	<button>click</button>
+
+    <script>
+			// "use strict"
+      //'this' keyword - Special varibale takes the value of the 'Owner' of the function in which this keyword is used.
+			const peter = {
+				name: "Peter",
+				age: 25,
+				info: () =>{
+					console.log(`${this.name} is ${this.age} years-old`);
+				}
+				// info : function(){
+				// 	console.log("method Fn this:", this);
+        //   console.log(`${this.name} is ${this.age} years-old`);
+
+				// 	const x = () =>{
+				// 		console.log("Arr Fn this:", this);		
+				// 	}
+				// 	x()
+				// }
+			}
+			peter.info()
+
+			const apple = {
+				brand: "Apple",
+				model: "Iphone 16 pro",
+
+				printInfo: function(){
+					console.log(this);
+					
+					console.log(`${this.brand} ${this.model} was Released on Sep 2024`);
+				}
+			}
+			apple.printInfo()
+
+			function print(){
+				console.log(this);
+			}
+			print()
+
+			// const greet = () =>{
+			// 	console.log(this);
+			// }
+			// greet()
+
+			function greet(){
+       console.log(this);
+			}
+
+      const btn = document.querySelector("button")
+			btn.addEventListener("click", greet)
+
+			/* 
+			--------------------------------------------------------------------
+       Method -> this = <owner of the function>
+			
+			simple fn call -> this = undefined/global(window)
+
+			arrow fn call -> this = lexical this keyword <this of enclosed method>
+
+			Event listner -> this = <Dom Element> using simple Fn
+
+			new call, apply, bind -> this = set this keyword manaully.
+			--------------------------------------------------------------------
+			*/
+		</script>
+    
+</body>
+</html>
