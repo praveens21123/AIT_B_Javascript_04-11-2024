@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Fn2</title>
+</head>
+<body>
+  
+  <script>
+    // "use strict"
+
+    const apple = {
+      brand: "Apple",
+      model: "iphone 16",
+      price: "80K",
+      // info: function(mon, year){
+      //   console.log(`${this.brand} ${this.model} was released on ${mon} ${year}`);
+      // }
+    }
+    // apple.info("Sep", 2024)
+
+    const samsung = {
+      brand : "Samsung",
+      model : "s24 Ultra",
+      price: "120K",
+    }
+
+    const printInfo = function(mon, year){
+        console.log(`${this.brand} ${this.model} was released on ${mon} ${year}`);
+      }
+      // printInfo("Sep", 2024)
+/////////////////////////////////////////////////
+console.log(`-------CALL-------`);
+  /* 
+  1.) call - call method allows us to manually set this keyword of any function that we want to call.
+  */
+// printInfo.call(apple, "sep", 2024)
+// printInfo.call(samsung, "Aug", 2024)
+
+console.log(`-------Apply-------`);
+  /* 
+  2.) Apply - It's exactly same as call method, the only difference is that apply doen't receive a list arguments after the this keyword, but it's going to take any array of the arguments.
+  */
+const samsungArg = ["Aug", 2024]
+// printInfo.apply(samsung, samsungArg) 
+
+// Spreading the values (call)
+// printInfo.call(samsung, ...samsungArg)
+
+console.log(`-------Bind-------`);
+  /* 
+  3.) Bind - Just like call method bind also allows to manually set this keyword for any function call, the difference is bind doesn't immediatley call the function where instead it returns a new function where this keyword is bound.
+  */
+const bindToApple = printInfo.bind(apple)
+bindToApple("Nov", 2024)
+
+const bindToSam = printInfo.bind(samsung)
+bindToSam("Jan", 2024)
+// ////////////////////////////////////////////////////
+  /* 
+    Closures - Any function always access to the variable environment of the execution context in which the function was created even after the execution context of the function which gives birth. The closure is then basically this varible environment to the function , exactly at the time and place the function was created.
+  */
+  function count(){
+    let counter = 0
+    return function(){
+      counter++
+      console.log(counter);
+    }
+  }
+  const x = count()
+  x()
+  x()
+  ////////////////////////////////////////////////
+  /* 
+  Function Currying - Transforms a function with multiple arguments into a nested series of functions, each taking a single argument.
+  */
+
+  // General Way!
+  // function area(l, b){
+  //   return function(){
+  //     console.log(l * b);
+  //   }
+  // }
+  // area(2, 3)
+
+  // Currying way!
+  function area(l){
+    return function(b){
+      console.log(l * b);
+    }
+  }
+  area(2)(3)
+  </script>
+</body>
+</html>

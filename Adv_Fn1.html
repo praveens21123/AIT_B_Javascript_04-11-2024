@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Function - JS</title>
+</head>
+<body>
+  <button>Click</button>
+  
+  <script>
+    // First class Function
+    // const x = 10
+    // const sum = function(a, b){ return a + b}
+    /* 
+    Js has fundanmandal property of first class function, It helps to write higher order function. 
+
+    In JS:
+      -> JS treats function as first class citizen.
+      -> Functions treats as simply value.
+      -> Functions are another type of object. Object are consists a value, So functions also treated as value.
+    */
+    // const obj = {
+    //   name: "XYZ",
+    //   info: function(){
+    //     console.log("Hello");
+    //   }
+    // }
+
+    // ///////////////////////////////////////////
+    // /* 
+    // Higher Order Function - A function, that receives another function as an arguement (or) A function which returns another Function. (Both)
+    // */
+    // // 1.)
+    // const btn = document.querySelector("button")
+    // btn.addEventListener("click", ()=>{})
+
+    // // 2.)
+    function count(){
+      let counter = 0
+      return function(){
+        counter++
+        console.log(counter);
+      }
+    }
+    const x = count()
+    x()
+    // ////////////////////////////////////////////////////////////////////
+    // //CallBack Function - A function which passes as a arguement to another another function.
+
+    // // javascript is best  -> JAVASCRIPT is best
+
+    // CallBack Function
+    function firstUpper(str){
+      const [first, ...others] = str.split(" ")
+      return [first.toUpperCase(), ...others].join(" ")
+    }
+
+    // Higher Order Function
+    function textTrans(str, fn){
+      console.log(`Input String : ${str}`);
+      console.log(`Converted String : ${fn(str)}`);
+    }
+    textTrans("javascript is best", firstUpper)
+    /////////////////////////////////////////////////////////
+    // IIFE - Immediatly Invoked Function Expression : It runs as soon as it is defined.
+
+    (function(num1, num2, num3){
+     console.log(num1 + num2 + num3);
+    })(2, 2, 4)
+    ////////////////////////////////////////////////////////////
+  </script>
+</body>
+</html>
