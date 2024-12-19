@@ -87,7 +87,7 @@
   //  }
   // })
   // console.log(res);
-  //////////////////////
+  /////////////////////////////////////////////////
   /* 
   2.) map - The "map" method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
 
@@ -96,17 +96,169 @@
 })
   */
 
-  const num1 = [1, 2, 3, 4]
+  // const num1 = [1, 2, 3, 4]
   
-  const mapRes = num1.map((ele, i, arr)=>{
-    return ele * 2
-  })
-  console.log(num1);
+  // const mapRes = num1.map((ele, i, arr)=>{
+  //   return ele * 2
+  // })
+  // console.log(num1);
   
-  console.log(mapRes);
-  
-  
+  // console.log(mapRes);
+  ///////////////////////////////////////////////
 
+  /*  
+  3. Filter() - The "filter" method is an iterative method. It calls a provided callbackFn function once for each element in an array, and constructs a new array of all the values for which callbackFn returns a truthy value. Array elements which do not pass the callbackFn test are not included in the new array.
+
+  syntax:
+    array.filter((currentEle, index, array)=>{}) 
+  */
+
+  const num2 = [2, 5, 6, 1, 7, 8, 3]
+
+  const filterRes = num2.filter((ele, i, arr)=>{
+   return ele > 3
+  })
+  // const filterRes = num2.filter( ele => ele > 3)
+  console.log(filterRes);
+
+  const mobileData = [
+    {brand:"vivo", model:"v40", ram:8, price:35000},
+    {brand:"Apple", model:"iphone11", ram:4, price:40000},
+    {brand:"oneplus", model:"nord 9", ram:6, price:30000},
+    {brand:"samsung", model:"s23", ram:6, price:55000},
+    {brand:"redmi", model:"XYZ", ram:3, price:15000},
+    {brand:"realme", model:"ABC", ram:8, price:35000},
+    {brand:"Poco", model:"X6", ram:6, price:25000},
+  ]
+
+  const filteredRam = mobileData.filter((ele, i, arr)=>{
+    return ele.ram > 4
+  })
+  console.log(filteredRam);
+
+  ///////////////////////////////////////////////////
+  /* 
+  4.) Reduce()
+    Syntax : Array.reduce((accValue, curEle, i, arr)=>{}, accValue)
+  */
+
+  const num3 = [2, 5, 6, 1, 7, 8, 3]
+
+  const reduceRes = num3.reduce((acc, ele, i, arr)=>{
+    return acc + ele
+  }, 0)
+
+  console.log(reduceRes);
+
+  // const num4 = [2, 6, 1, 7, 8, 3]  //
+
+  // const res = num4.reduce((acc, ele)=>{
+  //    if(ele > 3){
+  //     acc.push(ele)
+  //    }
+  //    return acc
+  // }, [])
+  // console.log(res);
+  
+  // const res = num4.reduce((acc, ele)=>{
+  //    if(!acc.includes(ele)){
+  //     acc.push(ele)
+  //    }
+  //    return acc
+  // }, [])
+  // console.log(res);
+
+  // Filter operation in JS
+    // const res2 = mobileData.reduce((acc, ele)=>{
+  //   if(ele.ram > 4){
+  //     acc.push(ele)
+  //   }
+
+  //   return acc
+  // }, [])
+  // console.log(res2);
+  ////////////////////////////////////////////////
+  const num4 = [2, 5, 6, 1, 7, 8, 3]
+
+  // 5.)find()
+
+  const findRes = num4.find((mov)=>{
+    return mov > 2
+  } )
+  console.log(findRes)
+
+  // 6.)findIndex() 
+
+  const findIndexRes = num4.findIndex((mov)=>{
+    return mov > 2
+  } )
+  console.log(findIndexRes)
+
+  const num5 = [2, 5, 6, 1, 7, 8, 3]
+  
+  // 7.) some()
+
+  const someRes = num5.some((mov)=>{
+   return mov < 1
+  })
+  console.log(someRes);
+
+  // 8.) Every()
+
+  const everyRes = num5.every((mov)=>{
+   return mov < 10
+  })
+  console.log(everyRes);
+
+  // 9.) flat()
+
+  const nestArr1 = [[1, 2, 3], [4, [5, 6], 7], 8, 9]
+  console.log(nestArr1);
+  
+  const flatRes = nestArr1.flat(2)
+  console.log(flatRes);
+
+  console.log(Array.isArray(nestArr1));
+
+  const nestArr = [[1, 2, 3], [4, [5, 6], 7], 8, 9]
+  const flatedArr = []
+  function recur(arr){
+    arr.forEach((mov)=>{
+      if(Array.isArray(mov)){
+        recur(mov)
+      } else {
+        flatedArr.push(mov)
+      }
+    })
+  }
+  recur(nestArr)
+
+  console.log(flatedArr);
+  
+  // 10.) flatmap()
+
+  const students = [
+    {name: "Pradeep", num:[1, 2, 3]},
+    {name: "omesh", num:[3, 4, 5]},
+    {name: "Prasad", num:[6, 7, 8]},
+  ]
+
+  // const res = students.map(ele => ele.num).flat()
+  // console.log(res);
+
+  const flatMapRes = students.flatMap((ele)=> ele.num)
+  console.log(flatMapRes);
+
+  // 11.) sort()
+  const fruits = ["Mongo", "Kiwi", "Banana", "Orange", "apple"]
+  console.log(fruits.sort());
+
+  // const numerics = [8, 4, 7, 9, 2, 5, 1]
+  const numerics = [120, -450, -90, 220, -850, -30, 9]
+
+  // Compare function to sort numeric elements in an array.
+  console.log(numerics.sort((a, b)=> b - a));
+  /////////////////////////////////////
   </script>
 </body>
 </html>
