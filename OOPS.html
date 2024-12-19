@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOPS-1</title>
+</head>
+<body>
+  
+  <script>
+    // OOPS - Object Oriented Programming system/structure.
+
+    // Class - (BluePrint)
+    // User{
+    //   name: "XYZ",
+    //   email: "XYZ@gmail.com",
+    //   password : "ABC123",
+    //   // login : function(){
+    //   // }
+    //   login(){
+    //     // code to excute
+    //   }
+    // }
+
+    // const obj = new User() //Instantiation
+
+    // Instance
+    // obj1 = {
+    //   name,
+    //   email,
+    //   password,
+    //   login(){
+
+    //   }
+    // }
+
+    // obj2 = {
+    //   name,
+    //   email,
+    //   password,
+    //   login(){
+
+    //   }
+    // }
+
+    //Basic Principles of OOPS
+    /* 
+    Abstruction - Hiding or Ignoring the data, It doesn't matters
+    Encupsulation - Making Methods and Properties private inside the class.
+    Inheritance - A child class can access all the properties and methods with is inherited from certain class
+    Polymorphism - A child class can overwrite or having more properties and methods than the parent class.
+    */ 
+
+    /* 
+    1.) Constructor Function
+    2.) ES6 classes
+    3.) Object.create()
+    */
+
+    //--------->> 1.Constructor Function <<------------//
+
+    const Person = function(name, year){
+      this.firstName = name
+      this.birthYear = year
+    }
+
+    // Adding method into prototype of constructor function
+    Person.prototype.calcAge = function(){
+      console.log(2024 - this.birthYear);
+    }
+    
+    // const peter = new Person("Peter", 1999)
+    // const jessica = new Person("Jessica", 2000)
+
+    // console.log(peter.birthYear);
+    // console.log(peter.firstName);
+    
+    // peter.calcAge()
+    // jessica.calcAge()
+
+    // console.log(Person.__prototype === peter.__prototype);
+    
+    // console.log(peter);
+    // console.log(jessica);
+    /////////////////////////////////////////////////////
+    //---------->>2.) ES6 Classes <<-----------//
+
+    //There are 2 ways to create a ES6 classes.
+    // 1.) Class Expression
+        // const ClassName = class {
+        //   constructor
+        // }
+    // 2.) Class Declaration (Best Approch)
+    //  class Person {
+    //   // constructor
+    //  }
+
+    // Class - BluePrint
+         class PersonCl{
+          constructor(name, year){
+            this.firstName = name
+            this.birthYear = year
+          }
+          calcAge(){
+            console.log(2024 - this.birthYear);
+          }
+         }
+        const peter = new PersonCl("Peter", 1999)
+        const jessica = new PersonCl("Jessica", 2000)
+
+        peter.calcAge()
+        jessica.calcAge()
+
+        console.log(peter);
+        console.log(jessica);
+        console.log(peter.__prototype == Person.__prototype);
+  </script>
+</body>
+</html>
