@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOPS</title>
+</head>
+<body>
+  
+  <script>
+    // Getters and Setters in plain object.
+    const apple = {
+      brand: "Apple",
+      model: "Iphone 16",
+      features: ["AI Camera", "wide angle", "x", "y"],
+      //  printInfo : function(){
+      //   return this.features[0]
+      //  }
+      // Enhanced Object literal
+      get printInfo(){
+        return this.features[0]
+      },
+      set changeModelHandler(newModel){
+        this.model = newModel
+      }
+    }
+
+apple.changeModelHandler = "Iphone 16 pro max"
+
+console.log(apple.printInfo);
+console.log(apple);
+//////////////////////////////////////////
+// Getters and Setters in ES6 Classes.
+
+class Square{
+  constructor(width){
+    this.width = width
+    this.height = width
+  }
+  get print(){
+    return this.width * this.height
+  }
+  set changeWidthHandler(newWidth){
+    this.width = newWidth
+    this.height = this.width
+  }
+}
+
+const sqr = new Square(4)
+console.log(sqr.print);
+sqr.changeWidthHandler = 5
+console.log(sqr.print);
+console.log(sqr);
+
+/////////////////////////////////////////////////
+// const arr = [1, 2, 3]
+// console.log(arr.isArray(arr));
+
+class PersonCl{
+  constructor(name, year){
+    this.firstName = name
+    this.birthYear = year
+  }
+  calcAge(){
+    console.log(2024 - this.birthYear);
+  }
+  // Static Keyword - It used to making a methods only available inside the class
+  static greet(){
+    console.log("Hi There!");
+  }
+}
+PersonCl.greet()
+const peter = new PersonCl("Peter", 1999) // Instantiation
+console.log(peter);
+
+///////////////////////////////////////////////////////
+//------------>> Object.create() <<-----------//
+
+const personObj = {
+  // Using method to set properties to the object.
+  prop(name, year){
+    this.firstName = name
+    this.birthYear = year
+  },
+  calcAge(){
+    console.log(2024 - this.birthYear);
+  }
+}
+const tony = Object.create(personObj) //Instantiation
+tony.prop("Tony", 1975)
+
+// Old way to set properties to object
+// tony.firstName = "Tony"
+// tony.birthYear = 1975
+
+console.log(tony);
+///////////////////////////////////////////////////////
+  </script>
+</body>
+</html>
