@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP3</title>
+</head>
+<body>
+  
+  <script>
+    //  Inheritance - A child class can access all the properties and methods with is inherited from certain class
+
+    // ES6 Classes
+
+    // Parent Class
+    class TeacherCl{
+      constructor(name, year){
+        this.firstName = name
+        this.birthYear = year
+      }
+      calcAge(){
+        console.log(2024 - this.birthYear);
+      }
+      greet(){
+        console.log("Hello from parent class!");
+      }
+    }
+    // Child Class
+    class StudentCl extends TeacherCl{
+      constructor(name, year, course){
+        // this.firstName = name
+        // this.birthYear = year
+        super(name, year)
+        this.curCourse = course
+      }
+      // greet(){
+      //   console.log(`My name is ${this.firstName}, I'm studying ${this.curCourse} course`);
+      // }
+    }
+    
+    const peter = new StudentCl("Peter", 1999, "ReactJS")
+    peter.firstName = "XYZ"
+    console.log(peter);
+    
+    peter.calcAge()
+    peter.greet()
+    //////////////////////////////////////////////////
+    // Encupsulation - Making Methods and Properties private inside the class.
+
+    // Public Field - Yes
+    // Public Method - Yes
+    // Private Field - Yes
+    // Private Method - Yes
+
+
+    class StudentCls{
+      fullName; // Public
+      ID; // Public
+      #marks; // Private
+      constructor(name, id, mark){
+        this.fullName = name
+        this.ID = id
+        this.#marks = mark
+      }
+      get getMarks(){
+        return this.#marks
+      }
+    }
+
+    const pradeep = new StudentCls("Pradeep", 101, 75)
+    // pradeep.#marks = 100
+    console.log(pradeep.getMarks);
+    ///////////////////////////////////////////////////
+  </script>
+</body>
+</html>
