@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX</title>
+</head>
+<body>
+  <button>Click me</button>
+  <button id="track">Track me</button>
+  
+  <script>
+    // AJAX - Asynchonous Javascript and XML
+
+    console.log("A");
+
+    const btn = document.querySelector("button")
+    btn.addEventListener("click", ()=>{console.log("Btn was clicked!");
+    })
+    setTimeout(()=>{
+      console.log("B");
+    }, 0)
+
+    console.log("C");
+
+    let count = 0
+    for(let i = 0; i < 100000000; i++){
+      count+=i
+    }
+    console.log(count);
+
+    //////////////////////////////////////////////////////////////
+    // Geolocation 
+
+    const trackBtn = document.getElementById("track")
+
+    function trackHandler(){
+      navigator.geolocation.getCurrentPosition((posData)=>{
+        console.log(posData);
+      }, (reject)=>{
+        console.log(reject);
+      })
+    }
+    trackBtn.addEventListener("click", trackHandler)
+  </script>
+</body>
+</html>
